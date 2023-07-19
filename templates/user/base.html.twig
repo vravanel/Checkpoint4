@@ -14,15 +14,14 @@
     </head>
     <body class="bg-primary">
     {% include '_include/_navbar.html.twig' %}
-    {% for category, messages in app.flashes %}
-        {% for message in messages %}
-            <div class="alert alert-{{ category }} mt-3">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endfor %}
-
-    {% block body %}
+    <div class="row">
+        <div class="col col-lg-3">
+    {% include '_include/_navbar_user.html.twig' %}
+        </div>
+        <div class="col col-lg-9">
+        {% block body %}
         {% endblock %}
+        </div>
+    </div>
     </body>
 </html>

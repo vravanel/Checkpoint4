@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+    <section class=" vh-100 d-flex align-items-center">
+        <div class="row w-100">
+            <div class="col-lg-6 d-none d-lg-block vh-100">
+                <img src="{{ asset('build/images/horse-g071bee338_1280.jpg') }}" alt=""
+                     class="img-fluid w-100 h-100 object-fit-cover">
+            </div>
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+                <form method="post">
+                    {% if error %}
+                        <div class="alert alert-danger mt-3">
+                            {{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    {% if app.user %}
+                        <div class="mb-3 mt-3">
+                            Vous êtes déjà connecté comme {{ app.user.userIdentifier }},
+                            <a href="{{ path('app_logout') }}" class="btn btn-secondary">Me déconnecter</a>
+                        </div>
+                    {% endif %}
+                    <h1 class="text-secondary mb-5"> Connexion </h1>
+                    <label for="inputEmail" class="text-white">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
+                           class="form-control" autocomplete="email" required autofocus>
+                    <label for="inputPassword" class="text-white mt-2">Mot de passe</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control"
+                           autocomplete="current-password" required>
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+                    <div class="d-grid col-12 mx-auto">
+                        <button class="btn btn-secondary mt-4 text-primary" type="submit">
+                            Me connecter
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}
