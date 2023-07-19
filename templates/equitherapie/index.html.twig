@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equithérapie{% endblock %}
+
+{% block body %}
+    <div class="container equitherapie">
+        <section>
+            <h1 class="text-secondary title-equitherapie text-center mt-4"> L’équithéraphie c’est quoi ? </h1>
+            <div class="row mt-5">
+                <div class="col-6 text-white d-flex align-items-center text-equitherapie">
+                    <p class="">L'équithérapie est une forme de thérapie qui utilise l'interaction avec les chevaux pour
+                     promouvoir le bien-être émotionnel, physique et mental des individus. Cette pratique thérapeutique
+                     s'appuie sur la relation spéciale qui peut se développer entre les humains et les chevaux, ainsi
+                     que sur les bénéfices que cette relation peut apporter.
+                    <br>
+                    <br>
+                     L'équithérapie peut être utilisée pour aider
+                     un large éventail de personnes, y compris celles qui ont des troubles physiques, des troubles du
+                     développement, des problèmes de santé mentale, des traumatismes ou des difficultés émotionnelles.
+                     Elle peut être adaptée à différents âges et à différentes conditions, des enfants aux adultes.</p>
+                </div>
+                <div class="col-4">
+                    <img src="{{ asset('build/images/equitherapie.jpg') }}" alt="" class="w-100 img-equitherapie">
+                    <img src="{{ asset('build/images/equitherapie-2.jpg') }}" alt="" class="w-100 img-equitherapie mt-4">
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <img src="{{ asset('build/images/American-Quarter-Horse.webp') }}" alt="" class="w-100 img-separator-equitherapie">
+    </div>
+    <div class="container">
+        <section>
+            <h2 class="text-secondary title-equitherapie text-center mt-4"> C'est quoi l'équitation Western ? </h2>
+
+                <div class="text-white d-flex align-items-center text-equitherapie">
+                    <p class="">L'équitation western est un style d'équitation qui trouve ses origines dans les traditions
+                        des cow-boys américains et du Far West. Contrairement à l'équitation classique, qui est souvent
+                        associée à l'équitation anglaise, l'équitation western met l'accent sur la maîtrise et l'utilisation
+                        du cheval pour le travail sur les ranchs et le bétail.
+                        <br>
+                        <br>
+                        L'équitation western se distingue par l'utilisation de selles de style western, qui sont plus
+                        grandes et plus confortables que les selles anglaises. Les selles western ont une pomme plus
+                        profonde, un siège plus large et des étriers larges qui permettent au cavalier de passer de
+                        longues heures en selle sans ressentir de fatigue excessive.
+                        <br>
+                        <br>
+                        Un autre aspect distinctif de l'équitation western est l'utilisation du "contact léger" avec les
+                        rênes. Contrairement à l'équitation classique, où le cavalier maintient un contact constant avec
+                        la bouche du cheval, l'équitation western privilégie une rêne plus lâche, permettant au cheval
+                        de garder sa tête et son encolure plus bas, ce qui est bénéfique lors du travail avec le bétail.
+                    </p>
+                </div>
+        </section>
+        <section>
+            <h2 class="text-secondary title-equitherapie text-center mt-4"> Comment se passe une séance ? </h2>
+
+            <div class="text-white d-flex align-items-center text-equitherapie">
+                <p class="">Lors des séances d'équithérapie, les personnes sont guidées à travers des activités impliquant
+                    les chevaux. Une séance débute par le contact avec le cheval, le brossage, le nourrissage.
+                    Ensuite viens le travail à pied, la monte ou d'autres exercices spécifiques adaptés aux besoins
+                    individuels du patient.
+                    <br>
+                    <br>
+                    Les chevaux sont choisis avec soin pour leur tempérament, leur comportement et leur aptitude à
+                    travailler avec des personnes. Leur présence calme et non-jugeante peut aider à créer un
+                    environnement sûr et propice à l'expression émotionnelle, à la communication, à la confiance et à
+                    la motivation.
+                </p>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}
