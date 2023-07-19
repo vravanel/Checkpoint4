@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active text-secondary" aria-current="page" href="#">Accueil</a>
+                    <a class="nav-link active text-secondary" aria-current="page" href="{{ path('app_home') }}">Accueil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-secondary" href="#">Equithérapie</a>
@@ -18,12 +18,21 @@
                 <li class="nav-item">
                     <a class="nav-link text-secondary" href="#">Cavalerie</a>
                 </li>
+                {% if app.user %}
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" href="#">Inscription</a>
+                    <a class="nav-link text-secondary" href="{{ path('app_user') }}">Mon espace</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" href="#">Connexion</a>
+                        <a class="nav-link text-secondary" href="{{ path('app_logout') }}">Déconnexion</a>
                 </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="{{ path('app_register') }}">Inscription</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="{{ path('app_login') }}">Connexion</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>

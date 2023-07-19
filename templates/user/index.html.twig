@@ -1,0 +1,11 @@
+{% extends 'user/base.html.twig' %}
+
+{% block title %}Mon Compte{% endblock %}
+
+{% block body %}
+    <h1 class="text-secondary mt-5"> Bonjour {{ app.user.firstname }}</h1>
+
+    <p class="text-white"> Bienvenue dans ton espace. Dans cet espace, tu peux modifier tes informations personnelles,
+    prendre rendez-vous et donner un avis.</p>
+
+{% endblock %}
