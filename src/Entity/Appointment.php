@@ -29,6 +29,10 @@ class Appointment
     {
         $this->users = new ArrayCollection();
     }
+    public function __toString(): string
+    {
+        return $this->getDate()->format('d-m-Y H:i:s');
+    }
 
     public function getId(): ?int
     {

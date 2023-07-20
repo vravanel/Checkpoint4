@@ -7,6 +7,11 @@
 <ul>
     {% for appointment in app.user.appointments %}
     <li class="text-secondary">{{ appointment.date.format('Y-m-d H:i:s') }}</li>
+        <form method="post" action="{{ path('app_appointment_delete', {'id': appointment.id}) }}"
+              onsubmit="return confirm('Etes-vous sur de vouloir supprimer cette vidéo ?');">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ appointment.id) }}">
+            <button class="rounded-2 text-secondary">Supprimer</button>
+        </form>
     {% endfor %}
 </ul>
 

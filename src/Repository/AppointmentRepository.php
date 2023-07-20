@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Appointment;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -20,6 +21,35 @@ class AppointmentRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Appointment::class);
     }
+
+    public function save(Appointment $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->persist($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
+    public function remove(Appointment $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->remove($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
+public function nbAppointment(): array
+{
+    $query = $this->createQueryBuilder('a')
+        ->select('a')
+        ->join('a.users', 'u')
+        ->groupBy('a.id')
+        ->having('COUNT(u.id) < 3');
+
+    return $query->getQuery()->getResult();
+}
 
 
 //    /**

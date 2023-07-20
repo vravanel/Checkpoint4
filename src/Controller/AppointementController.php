@@ -24,32 +24,35 @@ class AppointementController extends AbstractController
             'appointments' => $appointments,
             ]);
     }
-    #[Route('/rendez-vous/nouveau', name: 'appointement_new')]
+    #[Route('/rendez-vous/nouveau', name: 'appointment_new')]
     public function new(Request $request, AppointmentRepository $appointmentRepository): Response
     {
-        $appointments = $appointmentRepository->findAll();
-
-        $appointmentDates = [];
-        foreach ($appointments as $appointment) {
-            $appointmentDates[] = $appointment->getDate()->format('d-m-Y H:i:s');
-        }
-
-        $appointment = new Appointment();
-        $form = $this->createForm(AppointmentType::class, $appointment, ['appointmentDates' => $appointmentDates]);
+        $appointments = $appointmentRepository->nbAppointment();
+        $form = $this->createForm(AppointmentType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $appointmentIdSelected = $form->get('appointments')->getData();
 
-            $this->addFlash('success', 'Votre rendez vous du ' . $appointment->getDate() . ' a été ajouté avec succès.');
+            $this->getUser()->addAppointment($appointmentIdSelected);
 
-            $appointmentRepository->save($appointment, true);
+            $appointmentRepository->save($appointmentIdSelected, true);
 
             return $this->redirectToRoute('app_appointement', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('user/new.html.twig', [
-            'appointment' => $appointment,
+            'appointments' => $appointments,
             'form' => $form,
         ]);
+    }
+    #[Route('/rendez-vous/{id}', name: 'appointment_delete')]
+    public function delete(Request $request, Appointment $appointment, AppointmentRepository $appointmentRepository): Response
+    {
+
+        if ($this->isCsrfTokenValid('delete' . $appointment->getId(), $request->request->get('_token'))) {
+            $appointmentRepository->remove($appointment, true);
+        }
+            return $this->redirectToRoute('app_appointement', [], Response::HTTP_SEE_OTHER);
     }
 }
