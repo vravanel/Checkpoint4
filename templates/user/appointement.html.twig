@@ -3,6 +3,11 @@
 {% block title %}Mes Rendez-vous{% endblock %}
 
 {% block body %}
-
+    <h1 class="text-secondary">Mes rendez-vous</h1>
+<ul>
+    {% for appointment in app.user.appointments %}
+    <li class="text-secondary">{{ appointment.date.format('Y-m-d H:i:s') }}</li>
+    {% endfor %}
+</ul>
 
 {% endblock %}
