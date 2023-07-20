@@ -25,6 +25,7 @@ class UserFixtures extends Fixture
             ->setAdress('10 rue de Paris')
             ->setCityCode(75009)
             ->setCity('Paris');
+        $this->addReference('user_Brian', $user);
         $manager->persist($user);
 
         $user = new User();
@@ -37,6 +38,7 @@ class UserFixtures extends Fixture
             ->setAdress('10 rue de Bordeaux')
             ->setCityCode(33000)
             ->setCity('Bordeaux');
+        $this->addReference('user_Arthur', $user);
         $manager->persist($user);
 
         $user = new User();
@@ -49,6 +51,7 @@ class UserFixtures extends Fixture
             ->setAdress('10 rue de Montpellier')
             ->setCityCode(34000)
             ->setCity('Montpellier');
+        $this->addReference('user_Alexandre', $user);
         $manager->persist($user);
 
         $user = new User();
