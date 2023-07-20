@@ -1,0 +1,32 @@
+
+        <div>
+            <ul class="nav flex-column nav-aside">
+                {% set links = [
+                    {'title': 'Accueil',
+                        'path': 'app_admin_index',
+                    },
+                    {'title': 'Chevaux',
+                        'path': 'app_admin_horse_index',
+                    },
+                    {'title': 'Rendez-vous',
+                        'path': 'app_admin_appointment_index',
+                    },
+                    {'title': 'Retour sur le site',
+                        'path': 'app_home',
+                    },
+                    {'title': 'Déconnexion',
+                        'path': 'app_logout',
+                    },
+                ] %}
+
+                {% for link in links %}
+                    <li class="nav-item">
+                        <a href="{{ path(link.path) }}" class="nav-link text-white
+                {% if app.request.attributes.get('_route') == link.path %}actif{% endif %}"
+                           {% if app.request.attributes.get('_route') == link.path %}aria-current="page"{% endif %}>
+                            {{ link.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>

@@ -1,0 +1,13 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+     <div class="form-group d-grid col-6 mx-auto mt-3">
+        <form method="post" action="{{ path('app_admin_appointment_delete', {'id': appointment.id}) }}" onsubmit="return confirm('Es-tu sûr de vouloir supprimer ce rendez-vous ?');">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ appointment.id) }}">
+            <button class="btn btn-secondary">Supprimer le rendez-vous</button>
+        </form>
+         <div class="mt-2 mb-3 btn btn-secondary">
+             <a href="{{ path('app_admin_appointment_index') }}">Retour</a>
+         </div>
+     </div>
+    </div>
+</div>

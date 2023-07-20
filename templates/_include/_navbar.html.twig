@@ -19,6 +19,11 @@
                     <a class="nav-link text-secondary" href="{{ path('app_horse') }}">Cavalerie</a>
                 </li>
                 {% if app.user %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item">
+                     <a class="nav-link text-secondary" href="{{ path('app_admin_index') }}">Espace admin</a>
+                </li>
+                     {% endif %}
                 <li class="nav-item">
                     <a class="nav-link text-secondary" href="{{ path('app_user') }}">Mon espace</a>
                 </li>

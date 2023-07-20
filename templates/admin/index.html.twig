@@ -1,0 +1,11 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Espace Admin{% endblock %}
+
+{% block body %}
+    <h1 class="text-secondary mt-5"> Bonjour {{ app.user.firstname }}</h1>
+
+    <p class="text-white"> Bienvenue dans l'espace administrateur. Dans cet espace, tu peux modifier la page cavalerie,
+    ajouter modifier et annuler des rendez vous. D'autres fonctionnalités sont en cours de développement...</p>
+
+{% endblock %}
