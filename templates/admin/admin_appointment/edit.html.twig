@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Modifier les rendez-vous{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-white text-center mt-4 mb-4">Modifier les rendez-vous</h1>
+
+    {{ include('admin/admin_appointment/_form.html.twig', {'button_label': 'Enregistrer les modifications'}) }}
+
+    {{ include('admin/admin_appointment/_delete_form.html.twig') }}
+</div>
+{% endblock %}

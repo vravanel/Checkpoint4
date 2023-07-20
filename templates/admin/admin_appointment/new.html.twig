@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Nouveau rendez-vous{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-white text-center mt-4 mb-4">Ajouter un rendez-vous</h1>
+
+    {{ include('admin/admin_appointment/_form.html.twig') }}
+
+    <a href="{{ path('app_admin_appointment_index') }}">back to list</a>
+</div>
+{% endblock %}

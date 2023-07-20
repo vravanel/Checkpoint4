@@ -1,0 +1,25 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        {{ form_start(form) }}
+
+        <div class="form-group d-grid col-6 mx-auto text-white mt-3">
+            {{ form_label(form.date, 'Date du rendez-vous') }}
+            {{ form_widget(form.date) }}
+        </div>
+        <div class="form-group d-grid col-6 mx-auto text-white mt-3">
+            {{ form_label(form.nbUser, 'Nombre de places') }}
+            {{ form_widget(form.nbUser) }}
+        </div>
+        <div class="form-group d-grid col-6 mx-auto text-white mt-3">
+            {{ form_label(form.users, 'Les participants') }}
+            {{ form_widget(form.users) }}
+        </div>
+
+        <div class="form-group d-grid col-6 mx-auto mt-3 ">
+            <button class="btn btn-secondary">{{ button_label|default('Sauvegarder') }}</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+</div>
+
+
