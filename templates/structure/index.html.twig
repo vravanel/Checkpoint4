@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="mt-3">
+            <img src="{{ asset('build/images/la-propriete.jpg') }}" alt="" class="w-100 img-fluid img-home">
+    </div>
+    <section class="row mt-4">
+        <h1 class="text-secondary text-center ">Bienvenue à la piste Dorée !</h1>
+        <p class="text-white text-center text-structure mt-2">La propriété s'étend sur 11 ha, entièrement clos de murs.<br>
+            Les paddocks et les prés occupent 4 ha entourés de 6 ha de forêt privée.</p>
+    </section>
+    <section class="row mt-4 bg-white">
+        <div class="col-lg-6 p-0 d-flex flex-column align-items-center justify-content-center ">
+            <div class="container text-center text-structure mt-2">
+                <p>Les chevaux profitent du plein air au sein de leurs paddock au plein centre de la forêt qui entoure
+                    le domaine.</p>
+            </div>
+        </div>
+        <div class="col-lg-6 p-0 d-flex justify-content-center align-items-center">
+            <img src="{{ asset('build/images/quarter-horse.jpg') }}" class="img-fluid d-none d-sm-block" alt="">
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="col-lg-6 p-0 d-flex justify-content-center align-items-center">
+            <img src="{{ asset('build/images/cours-stage.webp') }}" class="img-fluid d-none d-sm-block" alt="">
+        </div>
+        <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center ">
+            <div class="container text-center text-white text-structure mt-2">
+                <p>2 grandes carrières extérieures clôturées</p>
+            </div>
+        </div>
+    </section>
+    <section class="row bg-white">
+        <div class="col-lg-6 p-0 d-flex flex-column align-items-center justify-content-center ">
+            <div class="container text-center text-structure mt-2">
+                <p>2 grands manèges couverts</p>
+            </div>
+        </div>
+        <div class="col-lg-6 p-0 d-flex justify-content-center align-items-center">
+            <img src="{{ asset('build/images/westernequitation.webp') }}" class="img-fluid d-none d-sm-block" alt="">
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-lg-6 p-0 d-flex justify-content-center align-items-center">
+            <img src="{{ asset('build/images/2000004003558.webp') }}" class="img-fluid d-none d-sm-block" alt="">
+        </div>
+        <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center ">
+            <div class="container text-white text-center text-structure mt-2">
+                <p>Selleries pour accueillir le matériel et entreposer le nécessaire pour les chevaux.
+                </p>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
