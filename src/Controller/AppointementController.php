@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/moncompte', name: 'app_')]
 class AppointementController extends AbstractController
 {
-    #[Route('/rendez-vous', name: 'appointement')]
+    #[Route('/rendez-vous', name: 'appointment')]
     public function index(?int $userId, AppointmentRepository $appointmentRepository): Response
     {
 

@@ -6,11 +6,11 @@
     <h1 class="text-secondary">Mes rendez-vous</h1>
 <ul>
     {% for appointment in app.user.appointments %}
-    <li class="text-secondary">{{ appointment.date.format('Y-m-d H:i:s') }}</li>
+    <li class="text-white">{{ appointment.date.format('Y-m-d H:i:s') }}</li>
         <form method="post" action="{{ path('app_appointment_delete', {'id': appointment.id}) }}"
-              onsubmit="return confirm('Etes-vous sur de vouloir supprimer cette vidéo ?');">
+              onsubmit="return confirm('Etes-vous sur de vouloir annuler ce rendez-vous ?');">
             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ appointment.id) }}">
-            <button class="rounded-2 text-secondary">Supprimer</button>
+            <button class="btn btn-secondary rounded-2 text-white">Annuler</button>
         </form>
     {% endfor %}
 </ul>

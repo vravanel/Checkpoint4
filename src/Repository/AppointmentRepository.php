@@ -39,11 +39,6 @@ class AppointmentRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-    public function queryFindAll(): Query
-    {
-        return $this->createQueryBuilder('a')
-            ->getQuery();
-    }
 
 public function nbAppointment(): array
 {

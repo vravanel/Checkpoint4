@@ -2,14 +2,20 @@
         <div>
             <ul class="nav flex-column nav-aside">
                 {% set links = [
-                    {'title': 'Informations personnelles',
-                        'path': 'app_information',
-                    },
-                    {'title': 'Home',
+                    {'title': 'Accueil',
                         'path': 'app_user',
                     },
+                    {'title': 'Informations personnelles',
+                        'path': 'app_account_information',
+                    },
                     {'title': 'Rendez-vous',
-                        'path': 'app_appointement',
+                        'path': 'app_appointment',
+                    },
+                    {'title': 'Retour sur le site',
+                        'path': 'app_home',
+                    },
+                    {'title': 'Déconnexion',
+                        'path': 'app_logout',
                     },
                 ] %}
 
