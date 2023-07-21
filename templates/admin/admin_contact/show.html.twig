@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <h1 class="text-secondary text-center">Contact</h1>
+
+    <table class="table">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+        <tbody>
+        <tr>
+            <td>{{ contact.firstname }}</td>
+            <td>{{ contact.lastname }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.message }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_contact_index') }}">Retour</a>
+
+    {% include 'admin/admin_contact/_delete_form.html.twig' %}
+{% endblock %}

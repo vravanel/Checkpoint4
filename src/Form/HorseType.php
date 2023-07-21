@@ -17,7 +17,7 @@ class HorseType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'attr' => [
-                    'class' => ' form-control-lg',
+                    'class' => ' form-control',
                     'placeholder' => 'Bella, Stella,..',
                 ],
             ])

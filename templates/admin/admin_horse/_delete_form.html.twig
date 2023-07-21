@@ -1,6 +1,5 @@
 <div class="row justify-content-center">
-    <div class="col-md-9">
-        <div class="form-group d-grid col-6 mx-auto mt-3">
+
             <form method="post" action="{{ path('app_admin_horse_delete', {'id': horse.id}) }}" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer ce cheval ?');">
                 <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ horse.id) }}">
                 <button class="btn btn-secondary">Supprimer le cheval</button>
@@ -8,6 +7,5 @@
             <div class="mt-2 mb-3 btn btn-secondary">
                 <a href="{{ path('app_admin_horse_index') }}">Retour</a>
             </div>
-        </div>
-    </div>
+
 </div>
